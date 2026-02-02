@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Shreya</title>
 
-  
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="projects.css" />
 </head>
 <body>
 
+  <!-- PAGE HEADER -->
   <header class="projects-header">
     <h1>Projects</h1>
     <p>
@@ -19,48 +19,87 @@
     </p>
   </header>
 
+  <!-- PROJECTS SECTION -->
   <section class="projects-section">
-    <span class="doodle doodle-top"></span>
-    <span class="doodle doodle-bottom"></span>
 
+    <!-- PROJECT CARD -->
     <div class="project-card">
 
-      <div class="project-image">
-        <img src="images/eventora.png" alt="Eventora Project Screenshot">
-      </div>
+      <!-- SUMMARY ROW -->
+      <div class="project-summary">
+        <div class="summary-text">
+          <h2>Eventora</h2>
+          <p>
+            A web-based event management system focused on structured workflows
+            and backend clarity.
+          </p>
+        </div>
 
-      <div class="project-content">
-        <h2>Eventora</h2>
-        <h4>Event Management System</h4>
-
-        <p class="project-description">
-          Eventora is a web-based event management system designed to
-          reduce manual coordination and bring structure to event workflows.
-        </p>
-
-        <p class="project-description">
-          Instead of relying heavily on frameworks, the emphasis was placed
-          on understanding backend logic, data flow, and user actions.
-        </p>
-
-        <ul class="project-points">
-          <li>Structured event and booking data handling</li>
-          <li>Venue discovery and filtering logic</li>
-          <li>Admin-side event management workflows</li>
-          <li>Focus on clarity, scalability, and maintainability</li>
-        </ul>
-
-        <p class="tech-stack">
-          <strong>Tech Stack:</strong> HTML, CSS, JavaScript, PHP, MySQL
-        </p>
-
-        <div class="project-links">
-          <a href="#" target="_blank">GitHub</a>
+        <div class="summary-actions">
+          <a href="https://incredible-ganache-2a1968.netlify.app/" target="_blank" rel="noopener">Live</a>
+          <a href="https://github.com/ShreyaShristii/Event-management-system" target="_blank" rel="noopener">GitHub</a>
+          <button class="toggle-btn" aria-expanded="false" aria-label="Toggle project details">+</button>
         </div>
       </div>
 
+      <!-- EXPANDABLE CONTENT -->
+      <div class="project-details">
+
+        <div class="project-image">
+          <img 
+            src="images/eventora.png" 
+            alt="Eventora Project Screenshot"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="project-content">
+          <h4>Event Management System</h4>
+
+          <p class="project-description">
+            Eventora is a web-based event management system built to replace
+            fragmented manual coordination with structured, traceable workflows.
+          </p>
+
+          <p class="project-description">
+            The project prioritizes understanding backend logic, data flow,
+            and user-driven actions rather than relying heavily on abstractions
+            or frameworks.
+          </p>
+
+          <ul class="project-points">
+            <li>Structured event and booking data handling</li>
+            <li>Venue discovery and filtering logic</li>
+            <li>Admin-side event management workflows</li>
+            <li>Designed with clarity, scalability, and maintainability in mind</li>
+          </ul>
+
+          <p class="tech-stack">
+            <strong>Tech Stack:</strong>
+            HTML · CSS · JavaScript · PHP · MySQL
+          </p>
+        </div>
+
+      </div>
+      <!-- END PROJECT DETAILS -->
+
     </div>
+    <!-- END PROJECT CARD -->
+
   </section>
+
+  <!-- SCRIPT -->
+  <script>
+    document.querySelectorAll(".toggle-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".project-card");
+        const expanded = card.classList.toggle("active");
+
+        button.textContent = expanded ? "−" : "+";
+        button.setAttribute("aria-expanded", expanded);
+      });
+    });
+  </script>
 
 </body>
 </html>
